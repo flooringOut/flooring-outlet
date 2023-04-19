@@ -1,4 +1,6 @@
+import Link from 'next/link';
 import React from 'react';
+import LinkButton from './LinkButton';
 import Product from './Product';
 
 const products = [
@@ -27,6 +29,11 @@ const Products = ({ title }) => {
         {products.map((product) => (
           <Product key={product.id} product={product} />
         ))}
+      </div>
+      <div className='w-full text-center mt-28'>
+        <LinkButton href='/products' className='text-base rounded'>
+          DISCOVER MORE
+        </LinkButton>
       </div>
     </div>
   );

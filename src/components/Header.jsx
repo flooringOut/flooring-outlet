@@ -33,21 +33,21 @@ const Header = () => {
           >
             <ul className='block md:flex text-md md:text-base'>
               <Link
-                href='#'
+                href='/'
                 className='py-3 px-5 hover:bg-primary hover:text-white transition-all flex justify-between items-center'
               >
                 <p>HOME</p>
                 <RxArrowRight size={26} className='md:hidden' />
               </Link>
               <Link
-                href='#'
+                href='/about'
                 className='py-3 px-5 hover:bg-primary hover:text-white transition-all flex justify-between items-center'
               >
                 <p>ABOUT</p>
                 <RxArrowRight size={26} className='md:hidden' />
               </Link>
               <Link
-                href='#'
+                href='/products'
                 className='py-3 px-5 hover:bg-primary hover:text-white transition-all flex justify-between items-center'
               >
                 <p>PRODUCTS</p>
