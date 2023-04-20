@@ -13,6 +13,14 @@ const Header = () => {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const arrowIcon = <RxArrowRight size={26} className='md:hidden' />;
+
+  const navItems = [
+    { id: 1, name: 'HOME', link: '/', icon: arrowIcon },
+    { id: 1, name: 'ABOUT', link: '/about', icon: arrowIcon },
+    { id: 1, name: 'PRODUCTS', link: '/products', icon: arrowIcon },
+  ];
+
   const onToggle = () => setIsMenuOpen((prev) => !prev);
 
   useEffect(() => {
@@ -22,9 +30,9 @@ const Header = () => {
   return (
     <>
       <div className='container py-3 flex text-primary justify-between '>
-        <div className=''>
+        <Link href='/'>
           <Image src={Logo} className='w-[70px] md:w-[100px]' alt='Logo' />
-        </div>
+        </Link>
         <div className='flex items-center'>
           <div
             className='block md:hidden fill-secondary hover:opacity-70 cursor-pointer'
@@ -38,27 +46,16 @@ const Header = () => {
             } absolute left-0 right-0 top-0 transition-all duration-200 bg-white md:static z-20 py-10 md:py-0`}
           >
             <ul className='block md:flex text-md md:text-base'>
-              <Link
-                href='/'
-                className='py-3 px-5 hover:bg-primary hover:text-white transition-all flex justify-between items-center'
-              >
-                <p>HOME</p>
-                <RxArrowRight size={26} className='md:hidden' />
-              </Link>
-              <Link
-                href='/about'
-                className='py-3 px-5 hover:bg-primary hover:text-white transition-all flex justify-between items-center'
-              >
-                <p>ABOUT</p>
-                <RxArrowRight size={26} className='md:hidden' />
-              </Link>
-              <Link
-                href='/products'
-                className='py-3 px-5 hover:bg-primary hover:text-white transition-all flex justify-between items-center'
-              >
-                <p>PRODUCTS</p>
-                <RxArrowRight size={26} className='md:hidden' />
-              </Link>
+              {navItems.map((item) => (
+                <Link
+                  key={item.id}
+                  href={item.link}
+                  className='py-3 px-5 hover:bg-primary hover:text-white transition-all flex justify-between items-center'
+                >
+                  <p>{item.name}</p>
+                  {item.icon}
+                </Link>
+              ))}
             </ul>
             <div
               className='md:hidden mt-5 m-auto cursor-pointer flex justify-center'
