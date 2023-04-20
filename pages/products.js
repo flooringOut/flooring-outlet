@@ -1,7 +1,9 @@
 import Products from '@/src/components/Products';
 import React from 'react';
 
-const products = () => {
+productsPage.title = 'PRODUCTS';
+
+function productsPage() {
   const products = [
     {
       id: 1,
@@ -28,6 +30,6 @@ const products = () => {
       isWrap
     />
   );
-};
+}
 
-export default products;
+export default productsPage;

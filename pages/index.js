@@ -5,6 +5,8 @@ import Products from '@/src/components/Products';
 
 const OpenSans = Open_Sans({ subsets: ['latin'] });
 
+Home.title = 'HOME';
+
 export default function Home() {
   const products = [
     {

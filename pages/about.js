@@ -4,7 +4,9 @@ import { GiRotaryPhone } from 'react-icons/gi';
 import { FaFax } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 
-function about() {
+About.title = 'ABOUT';
+
+function About() {
   const contactItems = [
     {
       id: 1,
@@ -46,7 +48,7 @@ function about() {
           but also the leap into electronic typesetting,
         </h3>
       </div>
-      <div className='bg-primary mt-44 py-20'>
+      <div className='bg-primary mt-32 py-20'>
         <div className='container text-white flex flex-col md:flex-row gap-20 justify-center items-center'>
           {contactItems.map((item) => (
             <div key={item.id} className='flex flex-col gap-4 items-center'>
@@ -63,4 +65,4 @@ function about() {
   );
 }
 
-export default about;
+export default About;
