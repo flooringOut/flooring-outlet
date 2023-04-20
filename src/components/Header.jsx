@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Logo from '../../public/logo.png';
 import Link from 'next/link';
@@ -7,11 +7,17 @@ import { HiOutlineMenuAlt3 } from 'react-icons/hi';
 import { IoIosCloseCircleOutline } from 'react-icons/io';
 import { RxArrowRight } from 'react-icons/rx';
 import { AiFillPhone } from 'react-icons/ai';
+import { useRouter } from 'next/router';
 
 const Header = () => {
+  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const onToggle = () => setIsMenuOpen((prev) => !prev);
+
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [router.pathname]);
 
   return (
     <>
