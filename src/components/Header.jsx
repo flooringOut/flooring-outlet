@@ -15,6 +15,8 @@ const Header = () => {
 
   const arrowIcon = <RxArrowRight size={26} className='md:hidden' />;
 
+  const activeRoute = router.route;
+
   const navItems = [
     { id: 1, name: 'HOME', link: '/', icon: arrowIcon },
     { id: 1, name: 'ABOUT', link: '/about', icon: arrowIcon },
@@ -52,7 +54,13 @@ const Header = () => {
                   href={item.link}
                   className='py-3 px-5 hover:bg-primary hover:text-white transition-all flex justify-between items-center'
                 >
-                  <p>{item.name}</p>
+                  <p
+                    className={`${
+                      activeRoute === item.link ? 'border-b-2' : 'border-b-0'
+                    }  pb-2`}
+                  >
+                    {item.name}
+                  </p>
                   {item.icon}
                 </Link>
               ))}
