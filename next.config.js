@@ -4,7 +4,6 @@ const nextConfig = {
   images: {
     domains: ['cdn.msisurfaces.com'],
   },
-  target: 'serverless',
 };
 
 module.exports = nextConfig;
