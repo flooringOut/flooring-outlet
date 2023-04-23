@@ -57,16 +57,17 @@ const PopularCarousel = () => {
       <div className='relative'>
         <Swiper
           modules={[Navigation, Pagination]}
-          navigation={{
-            prevEl: navigationPrevRef.current,
-            nextEl: navigationNextRef.current,
-          }}
-          onInit={(swiper) => {
-            swiper.params.navigation.prevEl = navigationPrevRef.current;
-            swiper.params.navigation.nextEl = navigationNextRef.current;
-            swiper.navigation.init();
-            swiper.navigation.update();
-          }}
+          // navigation={{
+          //   prevEl: navigationPrevRef.current,
+          //   nextEl: navigationNextRef.current,
+          // }}
+          // onInit={(swiper) => {
+          //   swiper.params.navigation.prevEl = navigationPrevRef.current;
+          //   swiper.params.navigation.nextEl = navigationNextRef.current;
+          //   swiper.navigation.init();
+          //   swiper.navigation.update();
+          // }}
+          navigation={true}
           breakpoints={{
             400: { slidesPerView: 2, spaceBetween: 20 },
             900: { slidesPerView: 3, spaceBetween: 40 },
@@ -87,7 +88,7 @@ const PopularCarousel = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        <button
+        {/* <button
           ref={navigationPrevRef}
           className='py-2 px-3 border-2 border-primary absolute top-[43%] left-[-55px] flex justify-between z-[99] cursor-pointer'
         >
@@ -98,7 +99,7 @@ const PopularCarousel = () => {
           className='py-2 px-3 border-2 border-primary absolute top-[43%] right-[-55px] flex justify-between z-[99] cursor-pointer'
         >
           <IoIosArrowForward size={25} />
-        </button>
+        </button> */}
       </div>
     </div>
   );
