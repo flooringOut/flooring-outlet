@@ -48,7 +48,7 @@ const products = [
 
 const PopularCarousel = () => {
   return (
-    <div className='container mt-44 p-10'>
+    <div className='container mt-44'>
       <h1 className='text-lg text-primary mb-8'>Most Popular</h1>
       <div className='relative'>
         <Swiper
