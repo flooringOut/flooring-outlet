@@ -1,14 +1,13 @@
 import React, { useRef } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import Image from 'next/image';
 import { IoIosArrowBack } from 'react-icons/io';
 import { IoIosArrowForward } from 'react-icons/io';
-import Swiper, { Navigation, EffectFade, Autoplay } from 'swiper';
-import { Swiper as Swip, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-Swiper.use([Navigation, EffectFade, Autoplay]);
+import { Navigation, Pagination } from 'swiper';
 
 const products = [
   {
@@ -56,7 +55,7 @@ const PopularCarousel = () => {
     <div className='container mt-44 p-10'>
       <h1 className='text-lg text-primary mb-8'>Most Popular</h1>
       <div className='relative'>
-        <Swip
+        <Swiper
           navigation={{
             prevEl: navigationPrevRef.current,
             nextEl: navigationNextRef.current,
@@ -65,15 +64,15 @@ const PopularCarousel = () => {
             swiper.params.navigation.prevEl = navigationPrevRef.current;
             swiper.params.navigation.nextEl = navigationNextRef.current;
           }}
-          breakpoints={{
-            400: { slidesPerView: 2, spaceBetween: 20 },
-            640: { slidesPerView: 2 },
-            900: { slidesPerView: 3, spaceBetween: 40 },
-            1100: { slidesPerView: 4 },
-          }}
+          // breakpoints={{
+          //   400: { slidesPerView: 2, spaceBetween: 20 },
+          //   900: { slidesPerView: 3, spaceBetween: 40 },
+          //   1100: { slidesPerView: 4 },
+          // }}
           spaceBetween={50}
+          modules={[Navigation, Pagination]}
           className='mySwiper'
-          // loop={true}
+          loop={true}
         >
           {products.map((el) => (
             <SwiperSlide key={el.id}>
@@ -85,7 +84,7 @@ const PopularCarousel = () => {
               />
             </SwiperSlide>
           ))}
-        </Swip>
+        </Swiper>
         <button
           ref={navigationPrevRef}
           className='py-2 px-3 border-2 border-primary absolute top-[43%] left-[-55px] flex justify-between z-[99] cursor-pointer'
