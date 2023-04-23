@@ -1,8 +1,7 @@
 import React, { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Image from 'next/image';
-import { IoIosArrowBack } from 'react-icons/io';
-import { IoIosArrowForward } from 'react-icons/io';
+import LinkButton from './LinkButton';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -48,25 +47,12 @@ const products = [
 ];
 
 const PopularCarousel = () => {
-  const navigationPrevRef = useRef(null);
-  const navigationNextRef = useRef(null);
-
   return (
     <div className='container mt-44 p-10'>
       <h1 className='text-lg text-primary mb-8'>Most Popular</h1>
       <div className='relative'>
         <Swiper
           modules={[Navigation, Pagination]}
-          // navigation={{
-          //   prevEl: navigationPrevRef.current,
-          //   nextEl: navigationNextRef.current,
-          // }}
-          // onInit={(swiper) => {
-          //   swiper.params.navigation.prevEl = navigationPrevRef.current;
-          //   swiper.params.navigation.nextEl = navigationNextRef.current;
-          //   swiper.navigation.init();
-          //   swiper.navigation.update();
-          // }}
           navigation={true}
           breakpoints={{
             400: { slidesPerView: 2, spaceBetween: 20 },
@@ -75,7 +61,6 @@ const PopularCarousel = () => {
           }}
           spaceBetween={50}
           className='mySwiper'
-          // loop={true}
           id='popular-silder'
         >
           {products.map((el) => (
@@ -89,18 +74,11 @@ const PopularCarousel = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        {/* <button
-          ref={navigationPrevRef}
-          className='py-2 px-3 border-2 border-primary absolute top-[43%] left-[-55px] flex justify-between z-[99] cursor-pointer'
-        >
-          <IoIosArrowBack size={25} />
-        </button>
-        <button
-          ref={navigationNextRef}
-          className='py-2 px-3 border-2 border-primary absolute top-[43%] right-[-55px] flex justify-between z-[99] cursor-pointer'
-        >
-          <IoIosArrowForward size={25} />
-        </button> */}
+      </div>
+      <div className='w-full text-center mt-28'>
+        <LinkButton href='/products' className='text-base rounded'>
+          DISCOVER MORE
+        </LinkButton>
       </div>
     </div>
   );
