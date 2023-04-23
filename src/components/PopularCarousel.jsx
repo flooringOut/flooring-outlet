@@ -56,21 +56,23 @@ const PopularCarousel = () => {
       <h1 className='text-lg text-primary mb-8'>Most Popular</h1>
       <div className='relative'>
         <Swiper
+          modules={[Navigation, Pagination]}
           navigation={{
             prevEl: navigationPrevRef.current,
             nextEl: navigationNextRef.current,
           }}
-          onBeforeInit={(swiper) => {
+          onInit={(swiper) => {
             swiper.params.navigation.prevEl = navigationPrevRef.current;
             swiper.params.navigation.nextEl = navigationNextRef.current;
+            swiper.navigation.init();
+            swiper.navigation.update();
           }}
-          // breakpoints={{
-          //   400: { slidesPerView: 2, spaceBetween: 20 },
-          //   900: { slidesPerView: 3, spaceBetween: 40 },
-          //   1100: { slidesPerView: 4 },
-          // }}
+          breakpoints={{
+            400: { slidesPerView: 2, spaceBetween: 20 },
+            900: { slidesPerView: 3, spaceBetween: 40 },
+            1100: { slidesPerView: 4 },
+          }}
           spaceBetween={50}
-          modules={[Navigation, Pagination]}
           className='mySwiper'
           loop={true}
         >
