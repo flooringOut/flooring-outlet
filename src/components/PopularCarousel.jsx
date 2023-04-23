@@ -1,13 +1,14 @@
-import React, { useRef, useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import React, { useRef } from 'react';
 import Image from 'next/image';
 import { IoIosArrowBack } from 'react-icons/io';
 import { IoIosArrowForward } from 'react-icons/io';
+import Swiper, { Navigation, EffectFade, Autoplay } from 'swiper';
+import { Swiper as Swip, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-import { Navigation } from 'swiper';
+Swiper.use([Navigation, EffectFade, Autoplay]);
 
 const products = [
   {
@@ -48,14 +49,14 @@ const products = [
 ];
 
 const PopularCarousel = () => {
-  const navigationPrevRef = React.useRef(null);
-  const navigationNextRef = React.useRef(null);
+  const navigationPrevRef = useRef(null);
+  const navigationNextRef = useRef(null);
 
   return (
     <div className='container mt-44 p-10'>
       <h1 className='text-lg text-primary mb-8'>Most Popular</h1>
       <div className='relative'>
-        <Swiper
+        <Swip
           navigation={{
             prevEl: navigationPrevRef.current,
             nextEl: navigationNextRef.current,
@@ -71,9 +72,8 @@ const PopularCarousel = () => {
             1100: { slidesPerView: 4 },
           }}
           spaceBetween={50}
-          modules={[Navigation]}
           className='mySwiper'
-          loop={true}
+          // loop={true}
         >
           {products.map((el) => (
             <SwiperSlide key={el.id}>
@@ -85,19 +85,19 @@ const PopularCarousel = () => {
               />
             </SwiperSlide>
           ))}
-        </Swiper>
-        <div
+        </Swip>
+        <button
           ref={navigationPrevRef}
           className='py-2 px-3 border-2 border-primary absolute top-[43%] left-[-55px] flex justify-between z-[99] cursor-pointer'
         >
           <IoIosArrowBack size={25} />
-        </div>
-        <div
+        </button>
+        <button
           ref={navigationNextRef}
           className='py-2 px-3 border-2 border-primary absolute top-[43%] right-[-55px] flex justify-between z-[99] cursor-pointer'
         >
           <IoIosArrowForward size={25} />
-        </div>
+        </button>
       </div>
     </div>
   );
