@@ -37,3 +37,18 @@
   object-fit: cover;
 }
 
+#popular-silder .swiper-button-prev::after {
+  transform: scale(70%);
+  border: #8b6f4e 3px solid;
+  background-color: #fff !important;
+  padding: 6px 10px;
+  color: black;
+}
+
+#popular-silder .swiper-button-next::after {
+  transform: scale(70%);
+  border: #8b6f4e 3px solid;
+  background-color: #fff !important;
+  padding: 6px 10px;
+  color: black;
+}

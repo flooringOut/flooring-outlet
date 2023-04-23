@@ -75,7 +75,8 @@ const PopularCarousel = () => {
           }}
           spaceBetween={50}
           className='mySwiper'
-          loop={true}
+          // loop={true}
+          id='popular-silder'
         >
           {products.map((el) => (
             <SwiperSlide key={el.id}>

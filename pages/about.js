@@ -40,12 +40,27 @@ function About() {
           width={500}
           height={500}
         />
-        <h3 className='text-base'>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the standard dummy text ever since the
-          1500s, when an unknown printer took a galley of type and scrambled it
-          to make a type specimen book. It has survived not only five centuries,
-          but also the leap into electronic typesetting,
+        <h3 className='text-base flex flex-col gap-6'>
+          <div className='flex flex-col gap-2'>
+            <h2 className='text-md text-primary border-b-2 pb-2 w-fit'>
+              OUR PURPOSE:
+            </h2>
+            <h3>Our Purpose to make dreams attainable.</h3>
+          </div>
+          <div className='flex flex-col gap-2 '>
+            <h2 className='text-md text-primary border-b-2 pb-2 w-fit'>
+              OUR VALUES:
+            </h2>
+            <h3>
+              Our Company&rsquo;s success comes down to the success of our
+              people.
+            </h3>
+          </div>
+          <p className='text-sm'>
+            These desired traits and qualities shape our daily actions. When we
+            live our values, we build deep, meaningful relationships with
+            everyone we work with.
+          </p>
         </h3>
       </div>
       <div className='bg-primary mt-32 py-20'>
