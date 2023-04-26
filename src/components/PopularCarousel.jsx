@@ -2,49 +2,12 @@ import React, { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Image from 'next/image';
 import LinkButton from './LinkButton';
+import ProductsList from '../../public/data/products.json';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 
 import { Navigation, Pagination } from 'swiper';
-
-const products = [
-  {
-    id: 1,
-    name: 'LUXURY VINYL FLOORING',
-    image: '/most-popular/popular1.jpg',
-  },
-  {
-    id: 2,
-    name: 'PORCELAIN TILE & CERAMIC TILE',
-    image: '/most-popular/popular2.jpg',
-  },
-  {
-    id: 3,
-    name: 'WATERPROOF HYBRID RIGID CORE',
-    image: '/most-popular/popular3.jpeg',
-  },
-  {
-    id: 4,
-    name: 'LUXURY VINYL FLOORING',
-    image: '/most-popular/popular4.jpeg',
-  },
-  {
-    id: 5,
-    name: 'PORCELAIN TILE & CERAMIC TILE',
-    image: '/most-popular/popular5.jpeg',
-  },
-  {
-    id: 6,
-    name: 'WATERPROOF HYBRID RIGID CORE',
-    image: '/most-popular/popular6.jpeg',
-  },
-  {
-    id: 7,
-    name: 'WATERPROOF HYBRID RIGID CORE',
-    image: '/most-popular/popular7.jpeg',
-  },
-];
 
 const PopularCarousel = () => {
   return (
@@ -63,7 +26,7 @@ const PopularCarousel = () => {
           className='mySwiper'
           id='popular-silder'
         >
-          {products.map((el) => (
+          {ProductsList.slice(6).map((el) => (
             <SwiperSlide key={el.id}>
               <Image
                 src={el.image}
@@ -71,6 +34,9 @@ const PopularCarousel = () => {
                 width={100}
                 height={100}
               />
+              <div className='font-bold text-primary text-center mt-3'>
+                <h2 className='text-base'>{el.name}</h2>
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>
