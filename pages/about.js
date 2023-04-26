@@ -13,7 +13,7 @@ function About() {
       title: 'PHONE',
       icon: <GiRotaryPhone size={52} />,
       value: '6788953080',
-      // href: `tel:${tel}`,
+      href: `tel:6788953080`,
     },
     {
       id: 2,
@@ -26,8 +26,8 @@ function About() {
       id: 3,
       title: 'EMAIL',
       icon: <MdEmail size={42} />,
-      value: 'example55@gmail.com',
-      // href: `mailto:${email}`,
+      value: 'hamzaalstud44@gmail.com',
+      href: `mailto:hamzaalstud44@gmail.com`,
     },
   ];
 
@@ -70,7 +70,7 @@ function About() {
               {item.icon}
               <h2 className='text-md'>{item.title}</h2>
               <a href={item.href}>
-                <h3 className='text-base opacity-70'>{item.value}</h3>
+                <h3 className='text-base opacity-70 underline'>{item.value}</h3>
               </a>
             </div>
           ))}
