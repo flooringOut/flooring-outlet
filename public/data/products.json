@@ -1,0 +1,15 @@
+[
+    { "id": "1", "name": "Antique Brown", "image": "/images/products/prod1.jpeg", "details": ""},
+    { "id": "2", "name": "Bass Wood – Natures Reserve – LVP", "image": "/images/products/prod2.jpeg", "details": ""},
+    { "id": "3", "name": "Burnt Oak – Natures Reserve – LVP", "image": "/images/products/prod3.jpeg", "details": ""},
+    { "id": "4", "name": "CDA 305L", "image": "/images/products/prod4.jpeg", "details": ""},
+    { "id": "5", "name": "Grey Cypress – Natures Reserve – LVP", "image": "/images/products/prod5.jpeg", "details": ""},
+    { "id": "6", "name": "Grey Manor", "image": "/images/products/prod6.jpeg", "details": ""},
+    { "id": "7", "name": "Grey Manor", "image": "/images/products/prod7.jpeg", "details": ""},
+    { "id": "8", "name": "Gunstock", "image": "/images/products/prod8.jpeg", "details": ""},
+    { "id": "9", "name": "Iron Wood – Natures Reserve – LVP", "image": "/images/products/prod9.jpeg", "details": ""},
+    { "id": "10", "name": "MP8828B", "image": "/images/products/prod10.jpeg", "details": ""},
+    { "id": "11", "name": "Stormy", "image": "/images/products/prod11.jpeg", "details": ""},
+    { "id": "12", "name": "White Oak – Natures Reserve – LVP", "image": "/images/products/prod12.jpeg", "details": ""},
+    { "id": "13", "name": "Winter Oak – Natures Reserve – LVP", "image": "/images/products/prod13.jpeg", "details": ""}
+]

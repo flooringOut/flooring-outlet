@@ -56,8 +56,10 @@ const Header = () => {
                 >
                   <p
                     className={`${
-                      activeRoute === item.link ? 'border-b-2' : 'border-b-0'
-                    }  pb-2`}
+                      activeRoute === item.link
+                        ? 'border-b-2 p-1'
+                        : 'border-b-0'
+                    }  `}
                   >
                     {item.name}
                   </p>
@@ -87,7 +89,7 @@ const Header = () => {
       <div className='h-[1px] bg-[#cccccc]' />
       <div className='container text-primary flex gap-2 justify-end items-center mt-2'>
         <AiFillPhone size={25} />
-        <h3>+1-202-555-0131</h3>
+        <h3>+1-770-882-8696</h3>
       </div>
     </>
   );

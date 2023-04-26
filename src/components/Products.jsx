@@ -8,7 +8,7 @@ const Products = ({ title, products, withButton = true, isWrap = false }) => {
     <div className='container mt-28'>
       {title && <h1 className='text-lg text-primary mb-8'>{title}</h1>}
       <div
-        className={`flex flex-col gap-x-10 gap-y-16 md:flex-row items-center ${
+        className={`grid grid-cols-2 md:grid-cols-3 gap-x-10 gap-y-16 md:flex-row ${
           isWrap && 'flex-wrap'
         } `}
       >

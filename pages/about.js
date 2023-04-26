@@ -19,7 +19,7 @@ function About() {
       id: 2,
       title: 'ADDRESS',
       icon: <FaFax size={38} />,
-      value: '3020 commerce way se , Atlanta, GA, U.S 30354',
+      value: '1092 Marietta ind dr, Marietta, GA, U.S',
       // href: `tel:${tel}`,
     },
     {
