@@ -13,7 +13,7 @@ const Product = () => {
   const product = ProductsList[productId - 1];
 
   return (
-    <div className='container flex mt-24 gap-12 md:gap-0 flex-col md:flex-row'>
+    <div className='container flex mt-14 md:mt-24 gap-12 md:gap-0 flex-col md:flex-row'>
       <CarouselWithThumbnails data={images} />
       <ProductDetails product={product} />
     </div>
