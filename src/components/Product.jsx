@@ -1,16 +1,23 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 function Product({ product }) {
-  const { name, image } = product;
+  const { name, images } = product;
 
   return (
-    <div className='flex flex-col gap-3'>
-      <Image src={image} alt='most popular' width={500} height={500} />
+    <Link href={`/products/${product.id}`} className='flex flex-col gap-3'>
+      <Image
+        src={images[0]}
+        alt='most popular'
+        width={500}
+        height={500}
+        className='max-h-[240px] md:max-h-[400px]'
+      />
       <div className='font-bold text-primary text-center'>
         <h2 className='text-base'>{name}</h2>
       </div>
-    </div>
+    </Link>
   );
 }
 

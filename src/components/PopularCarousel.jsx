@@ -10,6 +10,7 @@ import 'swiper/css/navigation';
 import { Navigation, Pagination } from 'swiper';
 
 const PopularCarousel = () => {
+  console.log({ ProductsList: ProductsList.slice(0, 6) });
   return (
     <div className='container mt-44'>
       <h1 className='text-lg text-primary mb-8'>Most Popular</h1>
@@ -26,16 +27,18 @@ const PopularCarousel = () => {
           className='mySwiper'
           id='popular-silder'
         >
-          {ProductsList.slice(6).map((el) => (
+          {ProductsList.slice(0, 6).map((el) => (
             <SwiperSlide key={el.id}>
-              <Image
-                src={el.image}
-                alt='carousel image'
-                width={100}
-                height={100}
-              />
-              <div className='font-bold text-primary text-center mt-3'>
+              <div className='max-h-[280px] md:max-h-[300px]'>
+                <Image
+                  src={el.images[0]}
+                  alt='carousel image'
+                  width={100}
+                  height={100}
+                />
+                {/* <div className='font-bold text-primary text-center mt-3'>
                 <h2 className='text-base'>{el.name}</h2>
+              </div> */}
               </div>
             </SwiperSlide>
           ))}

@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Carousel4 from '../../public/c1.jpg';
 import Carousel2 from '../../public/c2.jpg';
 import Carousel3 from '../../public/c3.jpg';
+import Products from '../../public/data/products.json';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -24,30 +25,16 @@ const Carousel = () => {
         loop={true}
         autoplay={{ disableOnInteraction: false, delay: 4000 }}
       >
-        <SwiperSlide>
-          <Image
-            src={Carousel4}
-            alt='carousel image'
-            width={700}
-            height={700}
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            src={Carousel2}
-            alt='carousel image'
-            width={700}
-            height={700}
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            src={Carousel3}
-            alt='carousel image'
-            width={700}
-            height={700}
-          />
-        </SwiperSlide>
+        {Products.map((product) => (
+          <SwiperSlide key={product.id}>
+            <Image
+              src={product.slideImage}
+              alt='carousel image'
+              width={700}
+              height={700}
+            />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );
