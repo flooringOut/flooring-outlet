@@ -25,7 +25,7 @@ const Carousel = () => {
         loop={true}
         autoplay={{ disableOnInteraction: false, delay: 4000 }}
       >
-        {Products.map((product) => (
+        {Products.filter((el) => el.slideImage !== '').map((product) => (
           <SwiperSlide key={product.id}>
             <Image
               src={product.slideImage}
