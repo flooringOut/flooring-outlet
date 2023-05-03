@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import Logo from '../../public/logo.png';
+import DARK_LOGO from '../../public/logo-dark.jpeg';
 import Link from 'next/link';
 import { BsWhatsapp } from 'react-icons/bs';
 import { HiOutlineMenuAlt3 } from 'react-icons/hi';
@@ -33,7 +33,7 @@ const Header = () => {
     <>
       <div className='container py-3 flex text-primary justify-between '>
         <Link href='/'>
-          <Image src={Logo} className='w-[70px] md:w-[100px]' alt='Logo' />
+          <Image src={DARK_LOGO} className='w-[70px] md:w-[100px]' alt='Logo' />
         </Link>
         <div className='flex items-center'>
           <div
@@ -87,9 +87,15 @@ const Header = () => {
         </div>
       </div>
       <div className='h-[1px] bg-[#cccccc]' />
-      <div className='container text-primary flex gap-2 justify-end items-center mt-2'>
-        <AiFillPhone size={25} />
-        <h3>+1-770-882-8696</h3>
+      <div className='container text-primary flex gap-8 justify-end items-center mt-2 pb-4'>
+        <div className='flex gap-2'>
+          <AiFillPhone size={25} />
+          <h3 className='text-base'>+1-770-882-8696</h3>
+        </div>
+        <div className='relative'>
+          <h3 className='text-md p-2 text-white bg-primary'>+3000</h3>
+          <p className='text-sm text-center absolute left-[25%]'>Styles</p>
+        </div>
       </div>
     </>
   );

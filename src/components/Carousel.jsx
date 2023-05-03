@@ -1,9 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Image from 'next/image';
-import Carousel4 from '../../public/c1.jpg';
-import Carousel2 from '../../public/c2.jpg';
-import Carousel3 from '../../public/c3.jpg';
 import Products from '../../public/data/products.json';
 
 import 'swiper/css';
