@@ -7,7 +7,7 @@ export const dynamic = 'force-dynamic'
 
 Home.title = 'HOME';
 
-export default async function Home() {
+export default function Home() {
   return (
     <main>
       <Carousel />
