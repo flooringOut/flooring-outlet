@@ -1,19 +1,17 @@
-import React, { useRef } from 'react';
+'use client'
+
+import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Image from 'next/image';
-import LinkButton from './LinkButton';
-import ProductsList from '../../public/data/products.json';
-
+import LinkButton from '../LinkButton';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
 import { Navigation, Pagination } from 'swiper';
 
-const PopularCarousel = () => {
-  console.log({ ProductsList: ProductsList.slice(0, 6) });
+const CarouselSwiper = ({ data }) => {
   return (
-    <div className='container mt-44'>
-      <h1 className='text-lg text-primary mb-8'>Most Popular</h1>
+    <>
       <div className='relative'>
         <Swiper
           modules={[Navigation, Pagination]}
@@ -27,14 +25,15 @@ const PopularCarousel = () => {
           className='mySwiper'
           id='popular-silder'
         >
-          {ProductsList.slice(0, 6).map((el) => (
+          {data.map((el) => (
             <SwiperSlide key={el.id}>
-              <div className='max-h-[280px] md:max-h-[300px]'>
+              <div className=''>
                 <Image
-                  src={el.images[0]}
+                  src={el.image}
                   alt='carousel image'
-                  width={100}
-                  height={100}
+                  width={300}
+                  height={300}
+                  className='h-[250px] md:h-[300px] w-[300px]'
                 />
                 {/* <div className='font-bold text-primary text-center mt-3'>
                 <h2 className='text-base'>{el.name}</h2>
@@ -49,8 +48,8 @@ const PopularCarousel = () => {
           DISCOVER MORE
         </LinkButton>
       </div>
-    </div>
-  );
-};
+    </>
+  )
+}
 
-export default PopularCarousel;
+export default CarouselSwiper

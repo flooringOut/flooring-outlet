@@ -1,5 +1,5 @@
 {
-  "name": "flooring-outlet",
+  "name": "max-blank",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,15 +10,18 @@
   },
   "dependencies": {
     "autoprefixer": "10.4.14",
-    "eslint": "8.38.0",
-    "eslint-config-next": "13.3.0",
-    "framer-motion": "^10.12.4",
-    "next": "13.3.0",
-    "postcss": "8.4.22",
+    "contentful": "^10.2.0",
+    "eslint": "8.40.0",
+    "eslint-config-next": "13.4.1",
+    "flowbite": "^1.6.5",
+    "flowbite-react": "^0.4.4",
+    "framer-motion": "^10.12.9",
+    "next": "13.4.1",
+    "postcss": "8.4.23",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
-    "swiper": "^9.2.3",
-    "tailwindcss": "3.3.1"
+    "swiper": "^9.3.0",
+    "tailwindcss": "3.3.2"
   }
 }

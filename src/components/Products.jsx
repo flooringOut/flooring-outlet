@@ -5,10 +5,10 @@ import Product from './Product';
 
 const Products = ({ title, products, isWrap = false }) => {
   return (
-    <div className='container mt-12 md:mt-28'>
+    <div className='container mt-12 md:mt-22'>
       {title && <h1 className='text-lg text-primary mb-8'>{title}</h1>}
       <div
-        className={`grid grid-cols-2 md:grid-cols-3 gap-x-5 gap-y-9 md:gap-x-10 md:gap-y-16 md:flex-row ${
+        className={`grid grid-cols-2 md:grid-cols-3 gap-x-5 gap-y-6 md:gap-x-10 md:gap-y-16 md:flex-row ${
           isWrap && 'flex-wrap'
         } `}
       >

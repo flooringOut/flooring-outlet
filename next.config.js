@@ -1,9 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  images: {
-    domains: ['cdn.msisurfaces.com'],
-  },
-};
+    images: {
+        remotePatterns: [
+            {
+              protocol: 'https',
+              hostname: 'images.ctfassets.net',
+              port: '',
+            },
+          ],
+    },
+    experimental: {
+        serverActions: true,
+    },    
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig

@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import DARK_LOGO from '../../public/logo-dark.jpeg';
@@ -7,27 +9,27 @@ import { HiOutlineMenuAlt3 } from 'react-icons/hi';
 import { IoIosCloseCircleOutline } from 'react-icons/io';
 import { RxArrowRight } from 'react-icons/rx';
 import { AiFillPhone } from 'react-icons/ai';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
+import Select from './Select';
 
 const Header = () => {
-  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const arrowIcon = <RxArrowRight size={26} className='md:hidden' />;
 
-  const activeRoute = router.route;
+  const activeRoute = usePathname();
 
   const navItems = [
     { id: 1, name: 'HOME', link: '/', icon: arrowIcon },
-    { id: 1, name: 'ABOUT', link: '/about', icon: arrowIcon },
-    { id: 1, name: 'PRODUCTS', link: '/products', icon: arrowIcon },
+    { id: 2, name: 'ABOUT', link: '/about', icon: arrowIcon },
+    // { id: 1, name: 'PRODUCTS', link: '/products', icon: arrowIcon },
   ];
 
   const onToggle = () => setIsMenuOpen((prev) => !prev);
 
   useEffect(() => {
     setIsMenuOpen(false);
-  }, [router.pathname]);
+  }, [activeRoute]);
 
   return (
     <>
@@ -52,20 +54,21 @@ const Header = () => {
                 <Link
                   key={item.id}
                   href={item.link}
-                  className='py-3 px-5 hover:bg-primary hover:text-white transition-all flex justify-between items-center'
+                  className='py-2 px-4 hover:bg-primary hover:text-white transition-all flex justify-between items-center'
                 >
                   <p
-                    className={`${
-                      activeRoute === item.link
-                        ? 'border-b-2 p-1'
-                        : 'border-b-0'
-                    }  `}
+                    // className={`${
+                    //   activeRoute === item.link
+                    //     ? 'border-b-2 p-1'
+                    //     : 'border-b-0'
+                    // }  `}
                   >
                     {item.name}
                   </p>
                   {item.icon}
                 </Link>
               ))}
+              <Select title='PRODUCTS' />
             </ul>
             <div
               className='md:hidden mt-5 m-auto cursor-pointer flex justify-center'

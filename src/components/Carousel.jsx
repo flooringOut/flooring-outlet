@@ -1,4 +1,6 @@
-import React, { useRef, useState } from 'react';
+'use client';
+
+import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Image from 'next/image';
 import Products from '../../public/data/products.json';
@@ -11,7 +13,7 @@ import { Pagination, Navigation, Autoplay } from 'swiper';
 
 const Carousel = () => {
   return (
-    <div className='mt-2 h-[50vh] md:h-[60vh] lg:h-[80vh]'>
+    <div id='home-carousel' className='mt-2 h-[50vh] md:h-[60vh] lg:h-[80vh]'>
       <Swiper
         pagination={{
           dynamicBullets: true,

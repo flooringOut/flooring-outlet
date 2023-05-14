@@ -1,6 +1,8 @@
+'use client';
+
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 
 const variants = {
   initialState: {
@@ -15,12 +17,11 @@ const variants = {
 };
 
 function PageTransition({ children }) {
-  const router = useRouter();
 
   return (
     <AnimatePresence>
       <motion.div
-        key={router.route}
+        key={usePathname()}
         initial='initialState'
         animate='animateState'
         variants={variants}

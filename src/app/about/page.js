@@ -32,7 +32,7 @@ function About() {
   ];
 
   return (
-    <div className='mt-20'>
+    <div className='mt-28'>
       <div className='container flex gap-8 items-center flex-col md:flex-row'>
         <Image
           alt='about image'
@@ -63,8 +63,8 @@ function About() {
           </p>
         </h3>
       </div>
-      <div className='bg-primary mt-32 py-20'>
-        <div className='container text-white flex flex-col md:flex-row gap-20 justify-center items-center'>
+      <div className='bg-primary mt-28 py-10'>
+        <div className='container text-white flex flex-col md:flex-row gap-12 justify-center items-center'>
           {contactItems.map((item) => (
             <div key={item.id} className='flex flex-col gap-4 items-center'>
               {item.icon}
