@@ -19,8 +19,6 @@ const getCategoryProducts = async (id) => {
     return products.items;
 }
 
-export const dynamicParams = true;
-
 export async function generateStaticParams() {
   const categories = await getAllCategories();
 
