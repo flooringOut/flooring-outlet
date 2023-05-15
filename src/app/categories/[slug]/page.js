@@ -19,17 +19,16 @@ const getCategoryProducts = async (id) => {
     return products.items;
 }
 
-// export async function generateStaticParams() {
-//   const categories = await getAllCategories();
+export async function generateStaticParams() {
+  const categories = await getAllCategories();
 
-//   console.log(categories.map(category => ({ slug: category.fields.slug })))
-//   return categories.map(category => ({ slug: category.fields.slug }))
-// }
+  console.log(categories.map(category => ({ slug: category.fields.slug })))
+  return categories.map(category => ({ slug: category.fields.slug }))
+}
 
 async function page({params}) {
   const categoryId = await getCategoryIdBySlug(params.slug)
   const products = await getCategoryProducts(categoryId);
-  console.log({params})
 
   const productsData = transformProducts(products);
   
