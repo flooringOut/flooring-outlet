@@ -4,13 +4,8 @@ import { transformCategories } from '@/transformation';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const getCategories = async () => {
-    const res = await contentful.getEntries({ content_type: 'categories'});
-    return res.items;
-}
-
-async function Categories() {
-  const categories = transformCategories(await getCategories())
+function Categories({ categoriesData }) {
+  const categories = transformCategories(categoriesData);
   
   return (
     <div className='mt-32 container'>       
@@ -18,7 +13,7 @@ async function Categories() {
       <div className='grid gap-5 grid-cols-2 md:grid-cols-3'>
         {categories.map((category) => (
           <Link href={'/categories/' + category.slug} key={category.id} className='relative transition-all hover:scale-110'>
-            <Image src={category.image} alt={category.name} width={400} height={400} className='flex-1 max-h-[240px] md:max-h-[400px]' />
+            <Image src={category.image} alt={category.name} width={400} height={400} className='flex-1 max-h-[200px] md:max-h-[300px]' />
             <div className='absolute top-0 w-[100%] h-[100%] bg-black opacity-40' />
             <div className='absolute w-[100%] h-[100%] top-0 flex justify-center items-center'>
               <p className='border-2 border-white p-2 text-base text-white'> {category.name}</p>

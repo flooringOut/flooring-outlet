@@ -63,10 +63,10 @@ function About() {
           </p>
         </h3>
       </div>
-      <div className='bg-primary mt-28 py-10'>
-        <div className='container text-white flex flex-col md:flex-row gap-12 justify-center items-center'>
+      <div className='bg-primary mt-28 py-10 md:py-16'>
+        <div className='container text-white flex flex-col md:flex-row gap-10 md:gap-16 justify-center items-center'>
           {contactItems.map((item) => (
-            <div key={item.id} className='flex flex-col gap-4 items-center'>
+            <div key={item.id} className='flex flex-col gap-2 md:gap-4 items-center'>
               {item.icon}
               <h2 className='text-md'>{item.title}</h2>
               <a href={item.href}>

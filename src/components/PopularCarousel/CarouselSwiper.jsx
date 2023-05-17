@@ -43,11 +43,11 @@ const CarouselSwiper = ({ data }) => {
           ))}
         </Swiper>
       </div>
-      <div className='w-full text-center mt-28'>
+      {/* <div className='w-full text-center mt-28'>
         <LinkButton href='/products' className='text-base rounded'>
           DISCOVER MORE
         </LinkButton>
-      </div>
+      </div> */}
     </>
   )
 }

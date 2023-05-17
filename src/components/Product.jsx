@@ -6,7 +6,7 @@ function Product({ product }) {
   const { name, image } = product;
 
   return (
-    <Link href={`/products/${product.id}`} className='flex flex-col gap-3'>
+    <Link href={`/products/${product.slug}`} className='flex flex-col gap-3'>
       <Image
         src={image}
         alt='most popular'

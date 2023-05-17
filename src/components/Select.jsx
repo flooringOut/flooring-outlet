@@ -1,11 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Dropdown } from 'flowbite-react'
 import Link from 'next/link';
-
-// const getCategories = async () => {
-//     const res = await contentful.getEntries({ content_type: 'categories'});
-//     return res.items;
-// }
+import AppContext from '@/context/AppContext';
+import { transformCategories } from '@/transformation';
 
 const categories = [
     {
@@ -35,11 +32,9 @@ const categories = [
   ]
 
 function Select({ title }) {
-//   const categories = transformCategories(await getCategories())
-//   console.log(categories)
-
-
-
+  const { categoriesData } = useContext(AppContext);
+  const categories = transformCategories(categoriesData)
+  
   return (
     <div className='flex items-center py-2 px-3 hover:bg-primary hover:text-white' id='products-menu'>
         <Dropdown

@@ -27,3 +27,16 @@ export const transformProducts = (products) => {
          }
      })
  }
+
+export const transformProduct = (product) => {
+    const id = product.sys.id
+    const fields = product.fields;
+    const image = 'https:' + product.fields.image.fields.file.url;
+
+    return {
+        id,
+        image,
+        name: fields.name,
+        slug: fields.slug,
+    }
+}
