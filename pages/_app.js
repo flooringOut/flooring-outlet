@@ -9,7 +9,7 @@ export default function App({ Component, pageProps, categoriesData }) {
   return (
     <AppContext.Provider value={{categoriesData}}>
       <PageTransition>
-        <DefaultLayout>
+        <DefaultLayout pageTitle={Component.title}>
           <Component {...pageProps} />
         </DefaultLayout>
       </PageTransition>
