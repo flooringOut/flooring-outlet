@@ -44,7 +44,7 @@ function Footer() {
       </div>
       <div className='flex flex-col md:flex-row gap-0 md:gap-10 justify-center p-2'>
         <p className='py-4 text-center'>
-          © cheapflooring.com 2023. All Rights Reserved.
+          © https://max-blank.netlify.app 2023. All Rights Reserved.
         </p>
 
         <div className='flex gap-6 items-center justify-center'>
