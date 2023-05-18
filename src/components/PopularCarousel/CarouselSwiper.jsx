@@ -8,6 +8,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 import { Navigation, Pagination } from 'swiper';
+import Link from 'next/link';
 
 const CarouselSwiper = ({ data }) => {
   return (
@@ -27,7 +28,7 @@ const CarouselSwiper = ({ data }) => {
         >
           {data.map((el) => (
             <SwiperSlide key={el.id}>
-              <div className=''>
+              <Link href={`/products/${el.slug}`}>
                 <Image
                   src={el.image}
                   alt='carousel image'
@@ -38,7 +39,7 @@ const CarouselSwiper = ({ data }) => {
                 {/* <div className='font-bold text-primary text-center mt-3'>
                 <h2 className='text-base'>{el.name}</h2>
               </div> */}
-              </div>
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>

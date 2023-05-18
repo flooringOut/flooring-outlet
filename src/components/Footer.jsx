@@ -48,12 +48,14 @@ function Footer() {
         </p>
 
         <div className='flex gap-6 items-center justify-center'>
-          <AiOutlineFacebook
-            size={40}
-            className='hover:opacity-70 cursor-pointer'
-          />
+          <a href='https://web.facebook.com/the.flooring.outlet.usa'>
+            <AiOutlineFacebook
+              size={40}
+              className='hover:opacity-70 cursor-pointer'
+            />
+          </a>
           <BsInstagram size={34} className='hover:opacity-70 cursor-pointer' />
-          <a href='tel:+1-770-882-8696'>
+          <a href='tel:+1-770-882-8696' target='_blank'>
             <BsWhatsapp size={34} className='hover:opacity-70 cursor-pointer' />
           </a>
         </div>

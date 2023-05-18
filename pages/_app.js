@@ -12,7 +12,7 @@ export default function App({ Component, pageProps, categoriesData }) {
         <DefaultLayout pageTitle={Component.title}>
           <Component {...pageProps} />
         </DefaultLayout>
-      </PageTransition>
+      </PageTransition> 
     </AppContext.Provider>
   )
 }
